@@ -45,9 +45,8 @@ class CustomUser(AbstractUser):
     filial = models.ForeignKey(Filial, on_delete=models.DO_NOTHING, blank=True, null=True)
     funcoes = models.ManyToManyField(
         Funcao,
-        verbose_name=_("funcao"),
+        verbose_name=_("funcoes"),
         blank=True,
-        null=True,
     )
 
     groups = None

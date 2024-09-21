@@ -66,6 +66,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['email'] = user.email
         token['first_name'] = user.first_name
         token['last_name'] = user.last_name
-        token['funcao'] = user.funcao.name
-        token['associado'] = user.associado.nome
+        token['funcoes'] = list(user.funcoes.values_list('name', flat=True))
+        token['filial'] = user.filial.nome
         return token
